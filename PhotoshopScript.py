@@ -1,6 +1,5 @@
 import photoshop.api as ps
 from photoshop import Session
-from psd_tools import PSDImage
 from PIL import Image
 import os
 import pathlib
