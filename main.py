@@ -77,6 +77,7 @@ def CBoxEvent(*args):
         SideGUI.SaveImgBtn.place(x = X - 195, y = 360)
 def ToBgEvent():
     SideGUI.CBoxVar.set(IMG_NAME)
+    SideGUI.EditMaskCheckbox['state'] = 'normal'
 def MaskBrushEvent(white):
     MainGUIList[FilePanel.NowTabs].BrushWhite = white
 def BrushSizeEvent(Big):
@@ -92,10 +93,11 @@ def SaveMaskImg(new):
     merged_image = MainGUIList[FilePanel.NowTabs].MergeEdit()
     if new:
         file_path = filedialog.asksaveasfilename(defaultextension='.png', filetypes = (('PNG files','*.png'),('all files','*.*')))
-        merged_image.save(file_path)
+        merged_image.save(file_path, bits=8)
     else:
-        path = MainGUIList[FilePanel.NowTabs].GetEditPath(SideGUI.CBoxVar.get())
-        merged_image.save(path)
+        file_path = MainGUIList[FilePanel.NowTabs].GetEditPath(SideGUI.CBoxVar.get())
+        merged_image.save(file_path, bits=8)
+        
 def SaveImg():
     file_path = filedialog.asksaveasfilename(defaultextension='.png', filetypes = (('PNG files','*.png'),('all files','*.*')))
     MainGUIList[FilePanel.NowTabs].bg.save(file_path)

@@ -196,8 +196,8 @@ class MainGUI:
         self.SetBackGround(mask)
         self.DoInpaint(mask)
         self.RemoveInpaintImg()
-        idx = self.masklist.index(mask)
         if not self.EditMode :
+            idx = self.masklist.index(mask)
             self.masklist.remove(mask)
             del self.maskimglist[idx]
         self.canvas.delete('line')
@@ -212,9 +212,9 @@ class MainGUI:
         # self.canvas.tag_raise("mask_layer")
         # self.maskid2segid[self.mask2id[mask.filename]] = id
     def SetBackGround(self, mask):   ## generate image without segment image
-        mask = ImageOps.invert(mask)
+        mask = ImageOps.invert(mask.convert('RGB'))
         result_image = Image.new('RGBA', self.bg.size)
-        result_image.paste(self.bg, mask=mask)
+        result_image.paste(self.bg, mask=mask.convert("RGBA"))
         self.bg = result_image
         self.img = ImageTk.PhotoImage(self.bg)
         self.canvas.itemconfig(self.bgid, image=self.img)
@@ -261,7 +261,7 @@ class MainGUI:
         self.canvas.delete('line')
     ###
     def MergeEdit(self):
-        EditBg = Image.new('RGB', self.Editimg.size, color='black')
+        EditBg = Image.new('RGBA', self.Editimg.size, color='black')
         if self.Editimg != self.bg :
             EditBg.paste(self.Editimg, self.Editimg)
         draw = ImageDraw.Draw(EditBg)
