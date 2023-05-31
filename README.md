@@ -8,6 +8,8 @@ We use [segment-anything](https://github.com/facebookresearch/segment-anything),
     git clone https://github.com/shanacon/InPaint_In_PhotoShop.git
     cd InPaint_In_PhotoShop
     ```
+    Make Sure the is no space in the path to InPaint_In_PhotoShop. otherwise there will occur an error when doing inpaint.
+    
 2. Install packages
     ```
     pip install torch torchvision torchaudio
