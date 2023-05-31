@@ -43,6 +43,7 @@ env.bak/
 venv.bak/
 
 *.png
+lama/
 mask/
 MaskImg/
 outputs/

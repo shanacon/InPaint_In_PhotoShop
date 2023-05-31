@@ -124,7 +124,7 @@ def ChangeEditByCtrl(event, maingui):
             mask_alpha = mask.getpixel((mouse_x - imgx, mouse_y - imgy))
             if mask_alpha > 0 and event.state & 0x4:
                 SideGUI.CBoxVar.set(os.path.basename(mask.filename))
-window.title('Image segmentor')
+window.title('InPaint In PhotoShop')
 window.resizable(False, False)
 window.geometry('320x150')
 window.mainloop()
