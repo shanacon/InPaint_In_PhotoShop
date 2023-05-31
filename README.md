@@ -91,7 +91,7 @@ We use [segment-anything](https://github.com/facebookresearch/segment-anything),
     
     In that case it is recommend to modify mask by **`Mask brush`**.
     
-    For more details, please refer to the [link].
+    For more details, please refer to the [link](https://github.com/shanacon/InPaint_In_PhotoShop/blob/main/USAGE.md).
     
 3.1 If **`Open in PhotoShop`** had select in step 1, we can edit the result in PhotoShop.
 
@@ -100,4 +100,4 @@ We use [segment-anything](https://github.com/facebookresearch/segment-anything),
    ![6](https://github.com/shanacon/InPaint_In_PhotoShop/assets/79785416/300f82ec-af94-4373-85cc-66d1dd5b8f6e)
  
 ## Usage detail
-Check [link]() for all function.
+Check [link](https://github.com/shanacon/InPaint_In_PhotoShop/blob/main/USAGE.md) for all function.
