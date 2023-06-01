@@ -214,7 +214,7 @@ class MainGUI:
     def SetBackGround(self, mask):   ## generate image without segment image
         mask = ImageOps.invert(mask.convert('RGB'))
         result_image = Image.new('RGBA', self.bg.size)
-        result_image.paste(self.bg, mask=mask.convert("RGBA"))
+        result_image.paste(self.bg, mask = mask.convert("RGBA"))
         self.bg = result_image
         self.img = ImageTk.PhotoImage(self.bg)
         self.canvas.itemconfig(self.bgid, image=self.img)
@@ -270,7 +270,7 @@ class MainGUI:
             width = self.canvas.itemconfig(line_id)['width'][-1]
             fill_color = self.canvas.itemcget(line_id, 'fill')
             draw.line(line_coords, fill_color, width = int(float(width)))
-        return EditBg
+        return EditBg.convert('L')
     ###
     def GetEditPath(self, maskname):
         for mask in self.masklist :
